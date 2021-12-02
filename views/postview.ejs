@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One For All</title>
+    <link rel="stylesheet" href="/css/postview.css" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <nav>
+                <i class="fa fa-square fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-circle fa-3x" aria-hidden="true"></i>
+                <ul>
+                    <li><a href="/board">Home</a></li>
+                    <li><a href="/blogs">Blogs</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- <aside class="sidebar">
+
+            <h3>Social</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </aside> -->
+
+        <section class="main">
+            <img src="<%=blog.imgurl%>">
+
+            <h2><%=blog.title%></h2>
+
+            <div class="post-meta">
+                <ul>
+                    <li>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <time datetime="12-09-2017" itemprop="datePublished"><%=blog.dating%></time>
+                    </li>
+                    <li>
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <a href="#" itemprop="author"><%=blog.tags%></a>
+                    </li>
+                    <li>
+                        <i class="fa fa-folder-open" aria-hidden="true"></i>
+                        <a href="#" itemprop="articleSection"><%=blog.author%></a>
+                    </li>
+                    <!-- <li>
+                        <i class="fa fa-tags" aria-hidden="true"></i>
+                        <a href="#" itemprop="keywords">HTML</a>,
+                        <a href="#" itemprop="keywords">CSS</a>,
+                        <a href="#" itemprop="keywords">grid</a>
+                    </li> -->
+                </ul>
+            </div>
+
+            <p><%-blog.content%></p>
+            <blockquote>
+                <p>
+                    <%=blog.description%>
+                </p>
+            </blockquote>
+
+        </section>
+
+    </div>
+
+</body>
+
+
+</html>
