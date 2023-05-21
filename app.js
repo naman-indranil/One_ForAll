@@ -18,14 +18,14 @@ app.use(cors());
 const superagent = require('superagent');
 const request = require('request');
 const NewsAPI = require('newsapi');
-const newsapi = new NewsAPI('apikey');
+const newsapi = new NewsAPI('b5cb9123b49249f28a29ff42dcd47c82');
 const keys=require('./config/keys.js');
 // const { response } = require('express');
 
 const {google}=require('googleapis');
 const service=google.youtube({
     version:'v3',
-    auth:'apikey'
+    auth:'AIzaSyBnqSAmy3ouNyWK_4VDqbSQElTZXQ11LH8'
 });
 
 app.set('views',path.join(__dirname,'views'));
@@ -78,7 +78,7 @@ app.get('/stories',async (req,res)=>{
 app.get('/movie',(req,res)=>{
     superagent
     .get('https://api.themoviedb.org/3/movie/now_playing')
-    .query({ api_key: 'apikey', region: `${code}` }) // query string
+    .query({ api_key: '03e3005a631069204d37b871cfd1d918', region: `${code}` }) // query string
     .end((err, response) => {
       // Do something
       if(response.status==200){
@@ -96,7 +96,7 @@ app.get('/movie',(req,res)=>{
 app.get('/songs',(req,res)=>{
     var reg=country.toLowerCase();
     superagent.get('https://ws.audioscrobbler.com/2.0')
-    .query({method:'geo.gettoptracks',country:`${reg}`,api_key:'apikey',format:'json'})
+    .query({method:'geo.gettoptracks',country:`${reg}`,api_key:'b1058419fdc7e7797ecb5a582659facc',format:'json'})
     .end((err,response)=>{
         if(response.status!=200){
             res.render('error');
