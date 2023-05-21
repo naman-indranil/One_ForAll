@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname,'public')));
 app.set('view engine','ejs');;
 app.use(express.json());
 app.use(bodyParser.json());
-const uri="mongodb+srv://user:dbname.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const uri="mongodb+srv://naman:naman.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 var code='IN';
 var country="India";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
